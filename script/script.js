@@ -109,14 +109,9 @@ document.addEventListener('DOMContentLoaded', function () {
             var subject = encodeURIComponent("İletişim Formu Mesajı: " + ad + " " + soyad);
             var body = encodeURIComponent("Gönderen: " + ad + " " + soyad + "\nE-Posta: " + email + "\n\nMesaj:\n" + mesaj);
             
-            /* Mailto linkine yönlendir (Gizli bir bağlantı oluşturarak tıklatma yöntemi daha güvenilirdir) */
-            var mailto_link = "mailto:zseher66@gmail.com?subject=" + subject + "&body=" + body;
-            
-            var a = document.createElement('a');
-            a.href = mailto_link;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
+            /* ÇÖZÜM: Bilgisayarda mail uygulaması kurulu değilse diye direkt olarak GMAIL Web arayüzünü yeni sekmede açıyoruz */
+            var gmailLink = "https://mail.google.com/mail/?view=cm&fs=1&to=zseher66@gmail.com&su=" + subject + "&body=" + body;
+            window.open(gmailLink, '_blank');
         });
     }
 
