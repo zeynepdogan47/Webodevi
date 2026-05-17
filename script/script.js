@@ -1,5 +1,5 @@
-// JavaScript Document/* =============================================
-   Zeynep Dogan | js/script.js
+/* =============================================
+   Zeynep Dogan | script/script.js
    Tum sayfalarda kullanilan ortak fonksiyonlar
    ============================================= */
 
@@ -51,6 +51,47 @@ document.addEventListener('DOMContentLoaded', function () {
 
         /* Sayfa acilisinda ilk resmi secili goster */
         kucukResimler[0].classList.add('secili');
+    }
+
+    /* ---------- 3. Lightbox — Buyuk resme tiklaninca tam ekran ---------- */
+    if (buyukResim) {
+
+        /* Overlay elementini olustur */
+        var overlay = document.createElement('div');
+        overlay.id  = 'lightbox_overlay';
+        overlay.innerHTML =
+            '<button id="lightbox_kapat" aria-label="Kapat">&#x2715;</button>' +
+            '<img id="lightbox_resim" src="" alt="">';
+        document.body.appendChild(overlay);
+
+        var lbResim = document.getElementById('lightbox_resim');
+        var lbKapat = document.getElementById('lightbox_kapat');
+
+        function lightboxAc() {
+            lbResim.src = buyukResim.src;
+            lbResim.alt = buyukResim.alt;
+            overlay.classList.add('acik');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function lightboxKapat() {
+            overlay.classList.remove('acik');
+            document.body.style.overflow = '';
+        }
+
+        buyukResim.style.cursor = 'zoom-in';
+        buyukResim.addEventListener('click', lightboxAc);
+        lbKapat.addEventListener('click', lightboxKapat);
+
+        /* Dis alana tiklaninca kapat */
+        overlay.addEventListener('click', function (e) {
+            if (e.target === overlay) { lightboxKapat(); }
+        });
+
+        /* Escape ile kapat */
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') { lightboxKapat(); }
+        });
     }
 
 });
