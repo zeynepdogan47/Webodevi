@@ -94,6 +94,32 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    /* ---------- 4. İletişim Formu ---------- */
+    var iletisimFormu = document.getElementById('iletisim_formu');
+    if (iletisimFormu) {
+        iletisimFormu.addEventListener('submit', function (e) {
+            e.preventDefault(); /* Varsayılan form gönderimini engelle */
+            
+            var ad = document.getElementById('ad').value;
+            var soyad = document.getElementById('soyad').value;
+            var email = document.getElementById('email').value;
+            var mesaj = document.getElementById('mesaj').value;
+            
+            /* Mail konusu ve içeriğini hazırla */
+            var subject = encodeURIComponent("İletişim Formu Mesajı: " + ad + " " + soyad);
+            var body = encodeURIComponent("Gönderen: " + ad + " " + soyad + "\nE-Posta: " + email + "\n\nMesaj:\n" + mesaj);
+            
+            /* Mailto linkine yönlendir (Gizli bir bağlantı oluşturarak tıklatma yöntemi daha güvenilirdir) */
+            var mailto_link = "mailto:zseher66@gmail.com?subject=" + subject + "&body=" + body;
+            
+            var a = document.createElement('a');
+            a.href = mailto_link;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        });
+    }
+
 });
 
 /* ==========================================================================
