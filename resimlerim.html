@@ -1,22 +1,26 @@
 <!doctype html>
+<!-- InstanceBegin template="/Templates/sablon.dwt" codeOutsideHTMLIsLocked="false" -->
 <html lang="tr">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- InstanceBeginEditable name="doctitle" -->
     <title>Zeynep Doğan | Resimlerim &amp; Galeri</title>
+    <!-- InstanceEndEditable -->
     <link href="css/stil.css" rel="stylesheet" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
         rel="stylesheet">
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
 </head>
 
 <body>
     <div id="tum_sayfa">
 
-        <!-- ===== NAVBAR ===== -->
         <nav id="ana_menu">
             <div class="navbar_konteyner">
                 <div class="nav_logo">
@@ -25,6 +29,7 @@
                 <button class="hamburger" id="hamburger_btn" aria-label="Menüyü aç/kapat">
                     <span></span><span></span><span></span>
                 </button>
+                <!-- InstanceBeginEditable name="navigation" -->
                 <ul class="nav_linkler" id="nav_menu">
                     <li>
                         <a href="index.html">
@@ -78,42 +83,39 @@
                         </a>
                     </li>
                 </ul>
+                <!-- InstanceEndEditable -->
             </div>
         </nav>
 
-        <!-- ===== ICERIK ===== -->
         <div id="ana_govde_alani">
             <div class="seffaf_icerik_paneli">
+                <!-- InstanceBeginEditable name="icerik" -->
                 <main id="ana_icerik">
                     <h1>Fotoğraf Galerisi</h1>
-                    <p class="galeri_giris_yazi">Küçük fotoğrafların üzerine tıklayarak büyük hallerini görebilirsiniz.
-                    </p>
+                    <p class="galeri_giris_yazi">Küçük fotoğrafların üzerine tıklayarak büyük hallerini görebilirsiniz.</p>
 
-                    <!-- Küçük resimler — TÜM yollar resimler/ klasörüne bakıyor (tutarlı) -->
                     <div class="galeri_kutu">
-                        <img src="resimler/Fotograflar/ZepnepFotograf1.jpeg" alt="Zeynep Doğan">
-                        <img src="resimler/Fotograflar/ZepnepFotograf2.jpeg" alt="Binicilik">
-                        <img src="resimler/Fotograflar/ZepnepFotograf3.jpeg" alt="Araba Sürme">
-                        <img src="resimler/Fotograflar/ZepnepFotograf4.jpeg" alt="Mutfak Kültürü">
+                        <img src="resimler/Fotograflar/ZepnepFotograf1.jpeg" alt="Zeynep Doğan" onclick="MM_swapImage('ana_buyuk_resim','','resimler/Fotograflar/ZepnepFotograf1.jpeg',1)">
+                        <img src="resimler/Fotograflar/ZepnepFotograf2.jpeg" alt="Binicilik" onclick="MM_swapImage('ana_buyuk_resim','','resimler/Fotograflar/ZepnepFotograf2.jpeg',1)">
+                        <img src="resimler/Fotograflar/ZepnepFotograf3.jpeg" alt="Araba Sürme" onclick="MM_swapImage('ana_buyuk_resim','','resimler/Fotograflar/ZepnepFotograf3.jpeg',1)">
+                        <img src="resimler/Fotograflar/ZepnepFotograf4.jpeg" alt="Mutfak Kültürü" onclick="MM_swapImage('ana_buyuk_resim','','resimler/Fotograflar/ZepnepFotograf4.jpeg',1)">
                     </div>
 
-                    <!-- Büyük resim alanı -->
                     <div id="buyuk_resim_alani">
                         <img src="resimler/Zepnep_Fotograf.jpeg" id="ana_buyuk_resim" alt="Büyük Görünüm">
                     </div>
                 </main>
+                <!-- InstanceEndEditable -->
             </div>
         </div>
 
-        <!-- ===== FOOTER ===== -->
         <footer id="alt_bilgi">
             <div class="footer_metin">Kodların Arasında, Hayatın İçinde Bir Dijital Günlük... | &copy; 2026 Zeynep Doğan
             </div>
         </footer>
 
     </div>
-    <!-- Galeri davranışı js/script.js içinde tanımlı -->
     <script src="script/script.js"></script>
 </body>
-
+<!-- InstanceEnd -->
 </html>
